@@ -15,8 +15,8 @@ const projects: Projects[] = [
     imgAlt: "Screenshot of Future Fest",
     title: "Future Fest",
     description:
-      "An image recognition application that identifies in-game items and displays their corresponding wiki information when users hover over objects in The Bazaar video game.",
-    tags: ["React", "Go", "Tailwind", "Auth0", "Storybook"],
+      "Full stack web application for a virtual venue where people can install a WebGPU to enter a Unity World in their browser, to hang out, attend events and advertise their NFTs",
+    tags: ["React", "Go", "Tailwind", "Auth0", "Storybook", "Docker", "AWS"],
     link: "https://www.futurefest.io/",
   },
   {
