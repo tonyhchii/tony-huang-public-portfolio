@@ -24,7 +24,7 @@ export const ProjectCard = ({
       rel="noopener noreferrer"
       className="flex gap-5 flex-col items-center lg:flex-row hover:bg-tertiary hover:scale-105 transition-all duration-300 rounded p-5 group"
     >
-      <div className="h-[400px] lg:w-[300px] lg:h-auto flex items-center justify-center overflow-hidden shadow-2xl">
+      <div className="h-[400px] lg:w-[500px] lg:h-auto flex items-center justify-center overflow-hidden shadow-2xl">
         <img
           className="w-full h-full object-cover rounded-xl"
           src={imgPath}

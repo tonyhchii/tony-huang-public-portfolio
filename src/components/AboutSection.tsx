@@ -11,7 +11,7 @@ export const AboutSection = () => {
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.4 }}
         >
           About <span className="text-highlight">Me</span>
@@ -50,7 +50,7 @@ export const AboutSection = () => {
               className="flex flex-col gap-4"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.4 }}
             >
               <button className="border rounded-full hover:[box-shadow:var(--shadow-glow)] active:scale-95 hover:scale-105 py-2 px-6">

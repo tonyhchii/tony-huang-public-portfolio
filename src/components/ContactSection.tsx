@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
 
 export const ContactSection = () => {
@@ -43,7 +44,13 @@ export const ContactSection = () => {
       id="contact"
       className="min-h-screen flex items-center justify-center p-8"
     >
-      <div className="flex flex-col md:flex-row rounded-2xl justify-center  overflow-hidden w-full max-w-5xl">
+      <motion.div
+        className="flex flex-col md:flex-row rounded-2xl justify-center  overflow-hidden w-full max-w-5xl"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+      >
         {/* Left Side - Contact Info */}
         <div className="md:w-1/ p-8 flex flex-col justify-center text-secondary gap-2">
           <h2 className="text-3xl font-bold mb-4 ">Contact Information</h2>
@@ -64,7 +71,7 @@ export const ContactSection = () => {
         {/* Right Side - Contact Form */}
         <form
           onSubmit={handleSubmit}
-          className="h-[420px] p-8 flex flex-col gap-5 bg-tertiary shadow-lg rounded-2xl"
+          className="h-[420px] p-8 flex flex-col gap-5 bg-tertiary shadow-lg rounded-2xl text-highlight"
         >
           <h1 className="font-bold text-highlight text-2xl md:text-3xl">
             Send a Message!
@@ -75,7 +82,7 @@ export const ContactSection = () => {
               name="firstName"
               placeholder="First Name"
               onChange={handleChange}
-              className="w-1/2 p-2 border border-highlight placeholder-highlight rounded"
+              className="w-1/2 p-2 border border-highlight placeholder-highlight rounded focus:outline-none"
               required
             />
             <input
@@ -83,7 +90,7 @@ export const ContactSection = () => {
               name="lastName"
               placeholder="Last Name"
               onChange={handleChange}
-              className="w-1/2 p-2 border border-highlight placeholder-highlight rounded"
+              className="w-1/2 p-2 border border-highlight placeholder-highlight rounded focus:outline-none"
               required
             />
           </div>
@@ -92,14 +99,14 @@ export const ContactSection = () => {
             name="email"
             placeholder="Email"
             onChange={handleChange}
-            className="p-2 border border-highlight placeholder-highlight rounded"
+            className="p-2 border border-highlight placeholder-highlight rounded focus:outline-none"
             required
           />
           <textarea
             name="message"
             placeholder="Your Message"
             onChange={handleChange}
-            className="p-2 border border-highlight placeholder-highlight rounded h-32"
+            className="p-2 border border-highlight placeholder-highlight rounded h-32 focus:outline-none"
             required
           ></textarea>
           <button
@@ -112,7 +119,7 @@ export const ContactSection = () => {
             {status === "loading" ? "Sending..." : "Send Message"}
           </button>
         </form>
-      </div>
+      </motion.div>
       <ToastContainer
         position="bottom-center"
         autoClose={3000}
