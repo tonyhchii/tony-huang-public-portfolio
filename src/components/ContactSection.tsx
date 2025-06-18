@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type FormEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
+const MAIL_API = import.meta.env.VITE_MAIL_API || "http://localhost:4000";
 
 export const ContactSection = () => {
   const [status, setStatus] = useState(""); // success | error | loading
@@ -23,7 +24,7 @@ export const ContactSection = () => {
     e.preventDefault();
     setStatus("loading");
     try {
-      const res = await fetch("http://localhost:4000/api/contact", {
+      const res = await fetch(`${MAIL_API}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -38,6 +39,8 @@ export const ContactSection = () => {
       toast.error("Error sending message.", { position: "bottom-center" }); //! 🔝
     }
   };
+
+  console.log("MAIL_API:", import.meta.env.VITE_MAIL_API);
 
   return (
     <section
