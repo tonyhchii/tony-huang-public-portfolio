@@ -6,7 +6,7 @@ export const AboutSection = () => {
       id="about"
       className="scroll-mt-24 py-32 bg-background text-secondary min-h-screen"
     >
-      <div className="container mx-auto max-w-5xl">
+      <div className="container max-w-5xl flex flex-col items-center">
         <motion.h2
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
           initial={{ opacity: 0, y: 40 }}

@@ -1,9 +1,12 @@
+import { ArrowUpRight } from "lucide-react";
+
 type ProjectCardProps = {
   imgPath: string;
   imgAlt: string;
   title: string;
   description: string;
-  links: { label: string; href: string }[];
+  tags: string[];
+  link: string;
 };
 
 export const ProjectCard = ({
@@ -11,34 +14,45 @@ export const ProjectCard = ({
   imgAlt,
   title,
   description,
-  links,
+  tags,
+  link,
 }: ProjectCardProps) => {
   return (
-    <div className="relative w-full max-w-4xl mx-auto rounded overflow-hidden">
-      {/* Background image */}
-      <img src={imgPath} alt={imgAlt} className="w-full object-cover" />
-
-      {/* Overlay text */}
-      <div className="absolute top-1/2 left-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 bg-background/80 text-secondary p-6 rounded z-10 shadow-lg">
-        <h3 className="text-highlight text-sm uppercase mb-2 tracking-widest">
-          Featured Project
-        </h3>
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <p className="text-sm mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-highlight underline text-sm"
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex gap-2 hover:bg-tertiary hover:scale-105 transition-all duration-300 rounded p-5 group"
+    >
+      <div className="w-[30rem]">
+        <img
+          className="w-full object-cover rounded-xl"
+          src={imgPath}
+          alt={imgAlt}
+        />
+      </div>
+      <div className="flex flex-col gap-3 text-left">
+        <div className="flex gap-2 items-center">
+          <h1 className="font-bold text-highlight text-2xl group-hover:text-foreground">
+            {title}
+          </h1>
+          <ArrowUpRight
+            className="text-highlight group-hover:text-foreground transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300"
+            size={15}
+          />
+        </div>
+        <p className="text-secondary">{description}</p>
+        <div className="flex gap-2">
+          {tags.map((tag) => (
+            <div
+              key={tag}
+              className="text-highlight bg-primary py-0.5 px-2 rounded-xl"
             >
-              {link.label}
-            </a>
+              {tag}
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
