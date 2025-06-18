@@ -4,9 +4,9 @@ export const AboutSection = () => {
   return (
     <section
       id="about"
-      className="scroll-mt-24 py-32 bg-background text-secondary min-h-screen"
+      className="scroll-mt-24 py-10 bg-background text-secondary"
     >
-      <div className="container max-w-5xl flex flex-col items-center">
+      <div className="container max-w-5xl flex flex-col items-center min-h-screen">
         <motion.h2
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
           initial={{ opacity: 0, y: 40 }}

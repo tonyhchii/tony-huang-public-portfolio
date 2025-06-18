@@ -35,6 +35,15 @@ const projects: Projects[] = [
     ],
     link: "https://github.com/stonehenge-collective/bazaar-buddy-client",
   },
+  {
+    imgPath: "/images/tony-huang-portfolio.png",
+    imgAlt: "Screenshot of Tony Huang Portfolio",
+    title: "Tony Huang Portfolio",
+    description:
+      "Full-stack personal portfolio application with integrated email backend, deployed on self-hosted LXC containers managed through Proxmox virtualization, featuring Nginx reverse proxy with automated TLS certificate management and DNS routing",
+    tags: ["React", "Tailwind", "NodeJS", "ProxMox", "Nginx", "VM"],
+    link: "https://github.com/tonyhchii/tony-huang-public-portfolio",
+  },
 ];
 export const ProjectsSection = () => {
   return (
